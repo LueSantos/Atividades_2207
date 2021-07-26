@@ -39,20 +39,55 @@ int main()
 }
 */
 
+/* Decimal para hexadecimal */
+
+ 
+ #include <stdio.h>
 
 int main()
 {
-    int num; // 'num' variable to hold decimal number
-    int oct_arr[100]; // array to hold octal value
-    int i=0; // counter to iterate/index array elements
+    int num; 
+    char hex_arr[100]; 
+    int i=0; 
+    
+    printf("Digite o número em Hexadecimal: "); 
+    scanf("%d", &num); 
+    while(num){ 
+      int temp = num%16; 
+      
+      if(temp<10)
+        hex_arr[i] = '0' + temp;
+      else
+        hex_arr[i] = 'A' + (temp-10);
+        
+      num = num/16; 
+      i++;  
+    }
+
+    printf(" O númro em Hexadecimal é: ");
+    while(i--){ 
+      printf("%c", hex_arr[i]); 
+    }
+    return 0;
+}
+
+
+/* Decimal para octadecimal */
+    
+
+int main()
+{
+    int num; 
+    int oct_arr[100];
+    int i=0; 
 
     printf("Enter decimal number: ");
-    scanf("%d", &num); // Read number into 'num'
+    scanf("%d", &num); 
 
-    while(num){ // loop until num isn't 0
-      oct_arr[i] = num%8; // num%8 will give single digit of octal
+    while(num){ 
+      oct_arr[i] = num%8; 
 
-      num = num/8; // divide num by 8 to get next digit of octal
+      num = num/8; 
 
       i++;  // increment countr to hold in next array element
     }
