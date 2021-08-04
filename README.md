@@ -1,1 +1,1 @@
-# printf("Atividades realizadas em C."); 
+# printf("Atividades em C."); 
